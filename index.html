@@ -125,7 +125,7 @@ footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center
 .det .cta{display:grid;gap:8px;margin-top:4px}
 .det .cta .btn{padding:14px}
 .x{position:absolute;right:12px;top:12px;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg);font-size:22px;line-height:1;z-index:2}
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:14.5px;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:calc(100% - 32px);text-align:center}
+.toast{line-height:1.4;position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:14.5px;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:calc(100% - 32px);text-align:center}
 .toast.on{opacity:1;transform:translateX(-50%)}
 .fab{display:none}
 
@@ -231,7 +231,7 @@ footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center
     </div>
 
     <div class="final">
-      <div><h2>Остались вопросы?</h2><p>Пришлём фото и видео нужной модели и рассчитаем доставку.</p></div>
+      <div><h2>Остались вопросы?</h2><p>Пришлём фото и видео нужной модели и рассчитаем доставку.<br>Telegram и MAX: <b style="color:#fff">+7 939 309-53-99</b></p></div>
       <div class="cta">
         <a class="btn btn-tg js-tg" href="#" target="_blank" rel="noopener">Telegram</a>
         <a class="btn btn-max js-max" href="#" target="_blank" rel="noopener">MAX</a>
@@ -273,8 +273,9 @@ footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center
 <script>
 /* ===== НАСТРОЙКИ: впишите свои контакты ===== */
 const CONTACTS = {
-  telegram: "https://t.me/USERNAME",   // ссылка на ваш Telegram
-  max:      "https://max.ru/USERNAME"  // ссылка на ваш профиль/канал в MAX
+  telegram: "https://t.me/+79393095399", // Telegram по номеру
+  max:      "",                          // ссылка на профиль MAX вида https://max.ru/u/... (пока пусто — кнопка копирует номер)
+  phone:    "+7 939 309-53-99"
 };
 const UPDATED = "ноябрь 2026";
 /* Зачёркнутая старая цена у столов: "размер|текущая цена": старая цена */
@@ -305,7 +306,7 @@ $("#upd").textContent = UPDATED;
 function msg(it){ return it ? `Здравствуйте! Интересует из каталога: ${it.title} — ${fmt(it.price)}. Есть в наличии?` : "Здравствуйте! Хочу узнать про столы и стулья из каталога."; }
 function link(kind, text){
   const base = CONTACTS[kind];
-  if (kind==="telegram" && text) return base + (base.includes("?")?"&":"?") + "text=" + encodeURIComponent(text);
+  if (kind==="telegram" && text && !base.includes("/+")) return base + (base.includes("?")?"&":"?") + "text=" + encodeURIComponent(text);
   return base;
 }
 function copy(text){
@@ -315,7 +316,13 @@ function copy(text){
 let tt; function toast(t){ const el=$("#toast"); el.textContent=t; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("on"),2600); }
 
 document.querySelectorAll(".js-tg").forEach(a=>{ const m=a.dataset.msg||msg(); a.href=link("telegram",m); a.addEventListener("click",()=>copy(m)); });
-document.querySelectorAll(".js-max").forEach(a=>{ const m=a.dataset.msg||msg(); a.href=link("max"); a.addEventListener("click",()=>copy(m)); });
+function maxClick(e,m){
+  if (CONTACTS.max){ copy(m); return; }
+  e.preventDefault();
+  try { navigator.clipboard.writeText(CONTACTS.phone.replace(/[^+\d]/g,"")); } catch(_){}
+  toast("Номер "+CONTACTS.phone+" скопирован. Найдите нас в MAX: Контакты → «+» → Найти по номеру");
+}
+document.querySelectorAll(".js-max").forEach(a=>{ const m=a.dataset.msg||msg(); a.href=CONTACTS.max||"#"; a.addEventListener("click",e=>maxClick(e,m)); });
 
 function inCat(it){ return st.cat==="all" || it.cat===st.cat; }
 function filtered(){
@@ -385,8 +392,8 @@ function openItem(i){
   $("#mPrice").innerHTML=(cur.old?`<s class="old">${fmt(cur.old)}</s>`:"")+fmt(cur.price);
   $("#mSpecs").innerHTML=cur.desc.split(/\.\s+/).filter(Boolean).map(s=>`<li>${s.replace(/\.$/,"")}</li>`).join("");
   const m=msg(cur);
-  $("#mTg").href=link("telegram",m); $("#mMax").href=link("max");
-  $("#mTg").onclick=$("#mMax").onclick=()=>copy(m);
+  $("#mTg").href=link("telegram",m);
+  $("#mTg").onclick=()=>copy(m); $("#mMax").href=CONTACTS.max||"#"; $("#mMax").onclick=e=>maxClick(e,m);
   $("#thumbs").innerHTML = cur.img.length>1 ? cur.img.map((s,k)=>`<img src="img/${s}" data-k="${k}" alt="">`).join("") : "";
   $("#prev").style.display=$("#next").style.display=cur.img.length>1?"":"none";
   showPh();
