@@ -129,30 +129,82 @@ footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center
 .toast.on{opacity:1;transform:translateX(-50%)}
 .fab{display:none}
 
+.dots{display:none;position:absolute;left:0;right:0;bottom:10px;justify-content:center;gap:6px;pointer-events:none}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45)}
+.dots i.on{background:#fff}
+.sticky-cta{display:none}
+.grab{display:none;position:absolute;left:50%;top:7px;transform:translateX(-50%);width:40px;height:4px;border-radius:2px;background:rgba(255,255,255,.7);z-index:3}
+.sheet .scroll{display:contents}
+@media (max-width:860px){.sheet .scroll{display:block}}
 @media (max-width:860px){
   .perks{grid-template-columns:1fr 1fr}
   .info{grid-template-columns:1fr}
-  .sheet{grid-template-columns:1fr;max-height:100%;border-radius:18px 18px 0 0;align-self:flex-end}
-  .modal{padding:0;align-items:flex-end}
   .top .contacts{display:none}
-  .fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:8px}
-  .fab .btn{flex:1;box-shadow:0 6px 20px rgba(0,0,0,.18);padding:13px}
-  footer{padding-bottom:90px}
+  .fab{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(247,242,234,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);transition:transform .2s}
+  .fab .btn{flex:1;padding:11px;font-size:15px}
+  body.modal-open .fab{transform:translateY(110%)}
+  footer{padding-bottom:100px}
+  /* bottom sheet */
+  .modal{padding:0;align-items:flex-end}
+  .sheet{grid-template-columns:1fr;border-radius:18px 18px 0 0;max-height:94vh;max-height:94dvh;display:flex;flex-direction:column;overflow:hidden;animation:up .22s ease-out}
+  @keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+  .sheet .scroll{overflow:auto;-webkit-overflow-scrolling:touch;flex:1}
+  .gal .main{aspect-ratio:4/3}
+  .gal .nav-b{display:none!important}
+  .dots{display:flex}
+  .thumbs{display:none}
+  .det{padding:16px 16px 8px;gap:8px}
+  .det h3{font-size:20px}
+  .det .price{font-size:26px}
+  .det .note,.det .cta{display:none}
+  .specs li{padding:8px 0;font-size:14.5px}
+  .sticky-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--paper)}
+  .sticky-cta .btn{padding:13px 8px;font-size:15px}
+  .x{background:rgba(255,253,249,.92);width:40px;height:40px;right:10px;top:10px}
+  .grab{display:block}
 }
 @media (max-width:520px){
-  .wrap{padding:0 14px}
-  .hero{padding:26px 0 18px}
-  .hero p{font-size:16px}
+  .wrap{padding:0 12px}
+  .top .wrap{padding-top:10px;padding-bottom:10px}
+  .logo b{width:34px;height:34px;font-size:16px;border-radius:9px}
+  .logo span{font-size:17px}
+  .hero{padding:16px 0 14px}
+  .hero h1{font-size:25px;margin-bottom:8px}
+  .hero p{font-size:15px;margin-bottom:14px}
+  .hero p .long{display:none}
+  .hero .cta{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .hero .cta .btn{padding:12px 8px;font-size:14.5px}
+  .perks{display:flex;overflow-x:auto;gap:8px;margin:14px -12px 0;padding:0 12px 2px;scrollbar-width:none}
+  .perks::-webkit-scrollbar{display:none}
+  .perk{flex:0 0 auto;max-width:200px;padding:9px 12px;font-size:12.5px;line-height:1.35}
+  .perk b{font-size:13.5px}
+  .tabs{padding:10px 0 8px;margin:0 -12px;padding-left:12px;padding-right:12px}
+  .tab{padding:9px 14px;font-size:14.5px}
+  .filters{gap:6px;padding-bottom:10px;flex-wrap:nowrap}
+  .chips{margin-left:-12px;padding-left:12px}
+  .chip{padding:7px 11px 7px 8px;font-size:13.5px}
+  .chip.nodot{padding-left:11px}
+  select{width:auto;max-width:132px;font-size:13.5px;padding:7px 6px;flex:none}
+  main{padding:14px 0 40px}
+  .sec-h{margin:0 0 10px}
+  .sec-h h2{font-size:20px}
   .grid{grid-template-columns:1fr 1fr;gap:10px}
-  .card .bd{padding:10px 11px 12px}
-  .card h3{font-size:14px}
+  .card{border-radius:14px}
+  .card:hover{transform:none}
+  .card .ph{aspect-ratio:1/1}
+  .card .bd{padding:9px 10px 11px;gap:4px}
+  .card h3{font-size:13.5px;line-height:1.28;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .card p{display:none}
+  .card .ft{padding-top:4px}
   .price{font-size:17px}
+  .price small{font-size:11px}
   .card .ft .btn{display:none}
-  .badge{font-size:11px;left:6px;top:6px}
+  .badge{font-size:11px;left:6px;top:6px;padding:2px 6px}
   .badge.r{right:6px}
-  .perk{padding:11px 12px;font-size:13px}
-  .final{padding:22px}
+  .box{padding:18px}
+  .box h2{font-size:19px}
+  .final{padding:20px}
+  .final h2{font-size:20px}
 }
 </style>
 </head>
@@ -170,8 +222,8 @@ footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center
 
 <section class="hero">
   <div class="wrap">
-    <h1>Столы и стулья для кухни и гостиной — <em>с доставкой по России</em></h1>
-    <p>Готовые обеденные наборы, раздвижные столы и стулья из массива берёзы. Выберите модель в каталоге и напишите нам: подскажем наличие, сроки и стоимость доставки до вашего города.</p>
+    <h1>Столы и стулья для кухни — <em>с доставкой по России</em></h1>
+    <p>Готовые обеденные наборы, раздвижные столы и стулья. <span class="long">Выберите модель в каталоге и напишите нам: подскажем наличие, сроки и стоимость доставки до вашего города.</span></p>
     <div class="cta">
       <a class="btn btn-tg js-tg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg>Написать в Telegram</a>
       <a class="btn btn-max js-max" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.6 1.1 5 3 6.7l-.6 3.4c-.1.5.4.8.8.6l3.4-1.6c1.1.3 2.2.5 3.4.5 5.5 0 10-4.2 10-9.6S17.5 2 12 2z"/></svg>Написать в MAX</a>
@@ -250,7 +302,10 @@ footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center
 <div class="modal" id="modal" role="dialog" aria-modal="true">
   <div class="sheet">
     <button class="x" id="close" aria-label="Закрыть">×</button>
+    <div class="scroll">
     <div class="gal">
+      <span class="grab"></span>
+      <div class="dots" id="dots"></div>
       <img class="main" id="mImg" alt="">
       <button class="nav-b prev" id="prev" aria-label="Назад">‹</button>
       <button class="nav-b next" id="next" aria-label="Вперёд">›</button>
@@ -265,6 +320,11 @@ footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center
         <a class="btn btn-tg" id="mTg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg>Узнать наличие в Telegram</a>
         <a class="btn btn-max" id="mMax" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.6 1.1 5 3 6.7l-.6 3.4c-.1.5.4.8.8.6l3.4-1.6c1.1.3 2.2.5 3.4.5 5.5 0 10-4.2 10-9.6S17.5 2 12 2z"/></svg>Узнать наличие в MAX</a>
       </div>
+    </div>
+    </div>
+    <div class="sticky-cta">
+      <a class="btn btn-tg" id="sTg" href="#" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn btn-max" id="sMax" href="#" target="_blank" rel="noopener">MAX</a>
     </div>
   </div>
 </div>
@@ -393,14 +453,25 @@ function openItem(i){
   $("#mSpecs").innerHTML=cur.desc.split(/\.\s+/).filter(Boolean).map(s=>`<li>${s.replace(/\.$/,"")}</li>`).join("");
   const m=msg(cur);
   $("#mTg").href=link("telegram",m);
-  $("#mTg").onclick=()=>copy(m); $("#mMax").href=CONTACTS.max||"#"; $("#mMax").onclick=e=>maxClick(e,m);
+  $("#mTg").onclick=$("#sTg").onclick=()=>copy(m); $("#sTg").href=$("#mTg").href;
+  $("#mMax").href=$("#sMax").href=CONTACTS.max||"#"; $("#mMax").onclick=$("#sMax").onclick=e=>maxClick(e,m);
+  $("#dots").innerHTML = cur.img.length>1 ? cur.img.map(()=>"<i></i>").join("") : "";
+  document.querySelector(".sheet .scroll").scrollTop=0;
   $("#thumbs").innerHTML = cur.img.length>1 ? cur.img.map((s,k)=>`<img src="img/${s}" data-k="${k}" alt="">`).join("") : "";
   $("#prev").style.display=$("#next").style.display=cur.img.length>1?"":"none";
   showPh();
-  $("#modal").classList.add("open"); document.body.style.overflow="hidden";
+  $("#modal").classList.add("open"); document.body.style.overflow="hidden"; document.body.classList.add("modal-open");
+  if(!history.state||!history.state.m) history.pushState({m:1},"");
 }
-function showPh(){ $("#mImg").src="img/"+cur.img[ph]; $("#mImg").alt=cur.title; document.querySelectorAll("#thumbs img").forEach((t,k)=>t.classList.toggle("on",k===ph)); }
-function closeM(){ $("#modal").classList.remove("open"); document.body.style.overflow=""; }
+function showPh(){ $("#mImg").src="img/"+cur.img[ph]; $("#mImg").alt=cur.title; document.querySelectorAll("#thumbs img").forEach((t,k)=>t.classList.toggle("on",k===ph)); document.querySelectorAll("#dots i").forEach((t,k)=>t.classList.toggle("on",k===ph)); }
+function hideM(){ $("#modal").classList.remove("open"); document.body.style.overflow=""; document.body.classList.remove("modal-open"); }
+function closeM(){ if(history.state&&history.state.m) history.back(); else hideM(); }
+window.addEventListener("popstate",()=>{ if($("#modal").classList.contains("open")) hideM(); });
+/* swipe photos */
+let sx=0,sy=0; const g=document.querySelector(".gal");
+g.addEventListener("touchstart",e=>{sx=e.touches[0].clientX; sy=e.touches[0].clientY;},{passive:true});
+g.addEventListener("touchend",e=>{ if(!cur||cur.img.length<2) return; const dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+  if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){ ph=(ph+(dx<0?1:-1)+cur.img.length)%cur.img.length; showPh(); } });
 $("#grid").addEventListener("click",e=>{const c=e.target.closest(".card"); if(c) openItem(+c.dataset.i);});
 $("#close").onclick=closeM;
 $("#modal").addEventListener("click",e=>{ if(e.target.id==="modal") closeM(); });
