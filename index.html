@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12 стульев — каталог столов и стульев | Набережные Челны</title>
+<meta name="description" content="Онлайн-каталог: обеденные наборы, раздвижные столы, стулья и табуретки из массива берёзы. Склад в Набережных Челнах, доставка по России, оплата при получении.">
+<meta property="og:title" content="12 стульев — каталог столов и стульев">
+<meta property="og:description" content="Наборы стол + 2–12 стульев, раздвижные столы, стулья из массива берёзы. Доставка по России, оплата при получении.">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23a0562b'/><text x='16' y='22' font-size='15' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>12</text></svg>">
+<style>
+:root{
+  --bg:#f7f2ea;--paper:#fffdf9;--ink:#2b2119;--muted:#7a6a5c;--line:#e7ddcf;
+  --wood:#a0562b;--wood-d:#7d3f1d;--wood-l:#f1e3d3;--ok:#3d7a4f;
+  --tg:#229ED9;--max:#5b3df5;
+  --r:16px;--shadow:0 1px 2px rgba(60,40,20,.06),0 6px 24px rgba(60,40,20,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* header */
+.top{background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;padding-top:14px;padding-bottom:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{width:40px;height:40px;border-radius:10px;background:var(--wood);color:#fff;display:grid;place-items:center;font-size:18px}
+.logo span{font-weight:800;font-size:20px;letter-spacing:-.02em;line-height:1.1}
+.logo small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);letter-spacing:0}
+.top .contacts{margin-left:auto;display:flex;gap:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:11px 16px;font-weight:650;font-size:15px;text-decoration:none;white-space:nowrap;transition:transform .12s,filter .12s}
+.btn:active{transform:scale(.97)}
+.btn:hover{filter:brightness(1.07)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-tg{background:var(--tg);color:#fff}
+.btn-max{background:var(--max);color:#fff}
+.btn-ghost{background:var(--wood-l);color:var(--wood-d)}
+.btn-sm{padding:9px 12px;font-size:14px;border-radius:10px}
+
+/* hero */
+.hero{padding:40px 0 28px}
+.hero h1{font-size:clamp(28px,4.6vw,46px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px;max-width:780px}
+.hero h1 em{font-style:normal;color:var(--wood)}
+.hero p{margin:0 0 22px;color:var(--muted);font-size:18px;max-width:640px}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.perk{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;color:var(--muted)}
+.perk b{display:block;color:var(--ink);font-size:15.5px;margin-bottom:2px}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,242,234,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:12px 0 10px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 15px;font-size:15px;font-weight:600;white-space:nowrap}
+.tab .n{color:var(--muted);font-weight:500;margin-left:4px;font-size:13px}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.tab.on .n{color:#cbb9a8}
+.filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:0 0 12px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.chips::-webkit-scrollbar{display:none}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 11px 5px 7px;font-size:13.5px;color:var(--ink);white-space:nowrap}
+.chip.nodot{padding-left:11px}
+.chip i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.chip.on{background:var(--wood-l);border-color:var(--wood);color:var(--wood-d);font-weight:600}
+select{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:6px 8px;color:var(--ink)}
+
+/* grid */
+main{padding:22px 0 60px}
+.sec-h{display:flex;align-items:baseline;gap:10px;margin:6px 0 16px}
+.sec-h h2{margin:0;font-size:24px;letter-spacing:-.02em}
+.sec-h span{color:var(--muted);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{background:var(--paper);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(60,40,20,.06),0 14px 34px rgba(60,40,20,.12)}
+.card .ph{position:relative;aspect-ratio:10/9;background:var(--wood-l);overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:10px;top:10px;background:rgba(255,253,249,.94);color:var(--ink);font-size:12.5px;font-weight:650;border-radius:8px;padding:3px 8px}
+.badge.r{left:auto;right:10px}
+.card .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{margin:0;font-size:16.5px;line-height:1.3;letter-spacing:-.01em}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ft{margin-top:auto;padding-top:8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.price{font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--wood-d)}
+.price small{font-weight:500;font-size:12.5px;color:var(--muted);letter-spacing:0;display:block;line-height:1}
+.empty{padding:50px 20px;text-align:center;color:var(--muted)}
+
+/* info blocks */
+.info{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:48px}
+.box{background:var(--paper);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.box h2{margin:0 0 12px;font-size:22px;letter-spacing:-.02em}
+.box ul{margin:0;padding-left:20px;color:var(--muted)}
+.box li{margin:6px 0}
+.box li b{color:var(--ink)}
+.rent{display:grid;grid-template-columns:1fr auto;gap:6px 14px;margin:6px 0 16px;font-size:15px}
+.rent span:nth-child(even){font-weight:700;text-align:right}
+.final{margin-top:18px;background:var(--ink);color:#fff;border-radius:var(--r);padding:30px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.final h2{margin:0 0 4px;font-size:24px;letter-spacing:-.02em}
+.final p{margin:0;color:#cbb9a8}
+.final .cta{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+footer{color:var(--muted);font-size:13.5px;padding:24px 0 40px;text-align:center}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(30,20,12,.55);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.sheet{background:var(--paper);border-radius:20px;max-width:980px;width:100%;max-height:calc(100vh - 40px);overflow:auto;display:grid;grid-template-columns:1.25fr 1fr;position:relative}
+.gal{background:#1d1510;position:relative;min-height:300px}
+.gal .main{width:100%;aspect-ratio:10/9;object-fit:contain}
+.gal .nav-b{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.88);font-size:22px;line-height:1;display:grid;place-items:center}
+.gal .prev{left:10px}.gal .next{right:10px}
+.thumbs{display:flex;gap:6px;padding:8px;overflow-x:auto}
+.thumbs img{width:64px;height:58px;object-fit:cover;border-radius:6px;opacity:.55;cursor:pointer;flex:none}
+.thumbs img.on{opacity:1;outline:2px solid #fff}
+.det{padding:26px 24px;display:flex;flex-direction:column;gap:12px}
+.det h3{margin:0;font-size:24px;line-height:1.2;letter-spacing:-.02em;padding-right:30px}
+.det .price{font-size:30px}
+.specs{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.specs li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.note{font-size:13.5px;color:var(--muted);background:var(--bg);border-radius:10px;padding:10px 12px}
+.det .cta{display:grid;gap:8px;margin-top:4px}
+.det .cta .btn{padding:14px}
+.x{position:absolute;right:12px;top:12px;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg);font-size:22px;line-height:1;z-index:2}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:14.5px;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.fab{display:none}
+
+@media (max-width:860px){
+  .perks{grid-template-columns:1fr 1fr}
+  .info{grid-template-columns:1fr}
+  .sheet{grid-template-columns:1fr;max-height:100%;border-radius:18px 18px 0 0;align-self:flex-end}
+  .modal{padding:0;align-items:flex-end}
+  .top .contacts{display:none}
+  .fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:8px}
+  .fab .btn{flex:1;box-shadow:0 6px 20px rgba(0,0,0,.18);padding:13px}
+  footer{padding-bottom:90px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 14px}
+  .hero{padding:26px 0 18px}
+  .hero p{font-size:16px}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .card .bd{padding:10px 11px 12px}
+  .card h3{font-size:14px}
+  .card p{display:none}
+  .price{font-size:17px}
+  .card .ft .btn{display:none}
+  .badge{font-size:11px;left:6px;top:6px}
+  .badge.r{right:6px}
+  .perk{padding:11px 12px;font-size:13px}
+  .final{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><b>12</b><span>12 стульев<small>Столы и стулья · Набережные Челны</small></span></a>
+    <div class="contacts">
+      <a class="btn btn-tg btn-sm js-tg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg>Telegram</a>
+      <a class="btn btn-max btn-sm js-max" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.6 1.1 5 3 6.7l-.6 3.4c-.1.5.4.8.8.6l3.4-1.6c1.1.3 2.2.5 3.4.5 5.5 0 10-4.2 10-9.6S17.5 2 12 2zm-3.3 11.6H7.2V8.8h1.5v4.8zm4.8 0h-1.4l-1.6-2.4v2.4H9V8.8h1.4l1.6 2.4V8.8h1.5v4.8zm3.8-3.6h-2v.6h1.8V12h-1.8v.6h2v1.1h-3.4V8.8h3.4V10z"/></svg>MAX</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Столы и стулья для кухни и гостиной — <em>с доставкой по России</em></h1>
+    <p>Готовые обеденные наборы, раздвижные столы и стулья из массива берёзы. Выберите модель в каталоге и напишите нам: подскажем наличие, сроки и стоимость доставки до вашего города.</p>
+    <div class="cta">
+      <a class="btn btn-tg js-tg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg>Написать в Telegram</a>
+      <a class="btn btn-max js-max" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.6 1.1 5 3 6.7l-.6 3.4c-.1.5.4.8.8.6l3.4-1.6c1.1.3 2.2.5 3.4.5 5.5 0 10-4.2 10-9.6S17.5 2 12 2z"/></svg>Написать в MAX</a>
+    </div>
+    <div class="perks">
+      <div class="perk"><b>Оплата при получении</b>Сначала смотрите мебель, потом платите</div>
+      <div class="perk"><b>Доставка по России</b>Отправляем со склада в Набережных Челнах</div>
+      <div class="perk"><b>Массив берёзы</b>Стулья держат 100–120 кг</div>
+      <div class="perk"><b>Раздвижные столы</b>От 110×70 до 200×100 см</div>
+    </div>
+  </div>
+</section>
+
+<div class="nav" id="catalog">
+  <div class="wrap">
+    <div class="tabs" id="tabs"></div>
+    <div class="filters">
+      <div class="chips" id="chips"></div>
+      <select id="sort" aria-label="Сортировка">
+        <option value="def">По порядку</option>
+        <option value="asc">Сначала дешевле</option>
+        <option value="desc">Сначала дороже</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="sec-h"><h2 id="secTitle"></h2><span id="secCount"></span></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>Ничего не нашлось. Напишите нам — подберём похожее.</div>
+
+    <div class="info">
+      <div class="box">
+        <h2>Как заказать</h2>
+        <ul>
+          <li><b>Выберите модель</b> и нажмите «Написать». Название и цена скопируются, их останется вставить в чат.</li>
+          <li><b>Мы ответим</b>: есть ли в наличии нужный цвет и размер, сколько стоит доставка до вашего города.</li>
+          <li><b>Оплата при получении.</b> Перед оплатой можно проверить мебель.</li>
+          <li><b>Не нашли нужное сочетание?</b> Соберём набор под вас: любой стол и от 2 до 12 стульев.</li>
+        </ul>
+        <p class="note" style="margin:14px 0 0">Стулья из массива берёзы. У столов ножки из массива берёзы, столешница из МДФ. Цвет на фото может немного отличаться от реального.</p>
+      </div>
+      <div class="box">
+        <h2>Аренда мебели</h2>
+        <p style="margin:0 0 8px;color:var(--muted)">Для свадеб, юбилеев и мероприятий</p>
+        <div class="rent">
+          <span>Столы</span><span>от 600 ₽</span>
+          <span>Стулья</span><span>от 150 ₽</span>
+          <span>Скамейки</span><span>от 200 ₽</span>
+          <span>Шатры</span><span>от 3 000 ₽</span>
+          <span>Скатерти</span><span>по запросу</span>
+        </div>
+        <a class="btn btn-ghost js-tg" data-msg="Здравствуйте! Интересует аренда мебели." href="#" target="_blank" rel="noopener">Узнать про аренду</a>
+      </div>
+    </div>
+
+    <div class="final">
+      <div><h2>Остались вопросы?</h2><p>Пришлём фото и видео нужной модели и рассчитаем доставку.</p></div>
+      <div class="cta">
+        <a class="btn btn-tg js-tg" href="#" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn btn-max js-max" href="#" target="_blank" rel="noopener">MAX</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>12 стульев · склад в Набережных Челнах · доставка по всей России<br>Цены актуальны на <span id="upd"></span>. Это не публичная оферта, наличие уточняйте у менеджера.</footer>
+
+<div class="fab">
+  <a class="btn btn-tg js-tg" href="#" target="_blank" rel="noopener">Telegram</a>
+  <a class="btn btn-max js-max" href="#" target="_blank" rel="noopener">MAX</a>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <button class="x" id="close" aria-label="Закрыть">×</button>
+    <div class="gal">
+      <img class="main" id="mImg" alt="">
+      <button class="nav-b prev" id="prev" aria-label="Назад">‹</button>
+      <button class="nav-b next" id="next" aria-label="Вперёд">›</button>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="det">
+      <h3 id="mTitle"></h3>
+      <div class="price" id="mPrice"></div>
+      <ul class="specs" id="mSpecs"></ul>
+      <div class="note">Нажмите кнопку: название и цена скопируются, останется вставить их в чат.</div>
+      <div class="cta">
+        <a class="btn btn-tg" id="mTg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg>Узнать наличие в Telegram</a>
+        <a class="btn btn-max" id="mMax" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.6 1.1 5 3 6.7l-.6 3.4c-.1.5.4.8.8.6l3.4-1.6c1.1.3 2.2.5 3.4.5 5.5 0 10-4.2 10-9.6S17.5 2 12 2z"/></svg>Узнать наличие в MAX</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== НАСТРОЙКИ: впишите свои контакты ===== */
+const CONTACTS = {
+  telegram: "https://t.me/USERNAME",   // ссылка на ваш Telegram
+  max:      "https://max.ru/USERNAME"  // ссылка на ваш профиль/канал в MAX
+};
+const UPDATED = "ноябрь 2026";
+/* ============================================ */
+
+const ITEMS = [{"cat": "chairs", "title": "Стул №2, ткань розель серый", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 4500, "color": "серый", "size": "", "n": 0, "img": ["chairs-6e02.jpg"]}, {"cat": "chairs", "title": "Стул №2, ткань розель светлый", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 4500, "color": "бежевый", "size": "", "n": 0, "img": ["chairs-6e03.jpg"]}, {"cat": "chairs", "title": "Стул №2 венге", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 4500, "color": "венге", "size": "", "n": 0, "img": ["chairs-6e04.jpg", "chairs-6e05.jpg", "chairs-6e06.jpg"]}, {"cat": "chairs", "title": "Стул №2 беж", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 4500, "color": "бежевый", "size": "", "n": 0, "img": ["chairs-6e07.jpg"]}, {"cat": "chairs", "title": "Стул №2 махагон", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 4500, "color": "махагон", "size": "", "n": 0, "img": ["chairs-6e08.jpg", "chairs-6e09.jpg"]}, {"cat": "chairs", "title": "Стул №2 орех", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 4500, "color": "орех", "size": "", "n": 0, "img": ["chairs-6e10.jpg", "chairs-6e11.jpg"]}, {"cat": "chairs", "title": "Стул №7 венге", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 4000, "color": "венге", "size": "", "n": 0, "img": ["chairs-6e12.jpg", "chairs-6e13.jpg"]}, {"cat": "chairs", "title": "Стул №7 махагон", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 4000, "color": "махагон", "size": "", "n": 0, "img": ["chairs-6e14.jpg"]}, {"cat": "chairs", "title": "Стул №7 белый", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 4000, "color": "белый", "size": "", "n": 0, "img": ["chairs-6e15.jpg"]}, {"cat": "chairs", "title": "Стул №7 бежевый", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 4000, "color": "бежевый", "size": "", "n": 0, "img": ["chairs-6e16.jpg"]}, {"cat": "chairs", "title": "Стул №7 орех", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 4000, "color": "орех", "size": "", "n": 0, "img": ["chairs-6e17.jpg"]}, {"cat": "chairs", "title": "Стул Хит", "desc": "Массив берёзы, жесткая спинка. Высота сиденья 45 см. глубина 45 см. ширина 39 см. высота стула 100 см", "price": 4500, "color": "", "size": "", "n": 0, "img": ["chairs-6e18.jpg", "chairs-6e19.jpg", "chairs-6e20.jpg"]}, {"cat": "chairs", "title": "Стул Лайт", "desc": "Массив берёзы, жесткая спинка", "price": 4200, "color": "", "size": "", "n": 0, "img": ["chairs-6e21.jpg", "chairs-6e22.jpg"]}, {"cat": "chairs", "title": "Стул Визит", "desc": "Массив берёзы, мягкая спинка", "price": 7500, "color": "", "size": "", "n": 0, "img": ["chairs-6e23.jpg", "chairs-6e24.jpg", "chairs-6e25.jpg", "chairs-6e26.jpg", "chairs-6e27.jpg", "chairs-6e28.jpg"]}, {"cat": "chairs", "title": "Стул жесткий", "desc": "Массив берёзы, жесткое сиденье мдф", "price": 5500, "color": "", "size": "", "n": 0, "img": ["chairs-6e29.jpg", "chairs-6e30.jpg", "chairs-6e31.jpg"]}, {"cat": "chairs", "title": "Стул жесткий", "desc": "Массив берёзы, жесткое сиденье мдф", "price": 6500, "color": "", "size": "", "n": 0, "img": ["chairs-6e32.jpg", "chairs-6e33.jpg"]}, {"cat": "chairs", "title": "Стул кресло", "desc": "Массив берёзы", "price": 7500, "color": "", "size": "", "n": 0, "img": ["chairs-6e34.jpg"]}, {"cat": "chairsets", "title": "2 стула №7", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 8000, "color": "", "size": "", "n": 2, "img": ["chairsets-6e35.jpg", "chairsets-6e41.jpg", "chairsets-6e47.jpg"]}, {"cat": "chairsets", "title": "4 стула №7", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 16000, "color": "", "size": "", "n": 4, "img": ["chairsets-6e36.jpg", "chairsets-6e42.jpg", "chairsets-6e48.jpg"]}, {"cat": "chairsets", "title": "6 стульев №7", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 24000, "color": "", "size": "", "n": 6, "img": ["chairsets-6e37.jpg", "chairsets-6e43.jpg", "chairsets-6e49.jpg"]}, {"cat": "chairsets", "title": "8 стульев №7", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 32000, "color": "", "size": "", "n": 8, "img": ["chairsets-6e38.jpg", "chairsets-6e44.jpg", "chairsets-6e50.jpg"]}, {"cat": "chairsets", "title": "10 стульев №7", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 40000, "color": "", "size": "", "n": 10, "img": ["chairsets-6e39.jpg", "chairsets-6e45.jpg", "chairsets-6e51.jpg"]}, {"cat": "chairsets", "title": "12 стульев №7", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 48000, "color": "", "size": "", "n": 12, "img": ["chairsets-6e40.jpg", "chairsets-6e46.jpg", "chairsets-6e52.jpg"]}, {"cat": "chairsets", "title": "4 стула", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 18000, "color": "", "size": "", "n": 4, "img": ["chairsets-6e53.jpg"]}, {"cat": "chairsets", "title": "6 стульев", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 27000, "color": "", "size": "", "n": 6, "img": ["chairsets-6e54.jpg"]}, {"cat": "chairsets", "title": "10 стульев", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 45000, "color": "", "size": "", "n": 10, "img": ["chairsets-6e55.jpg"]}, {"cat": "chairsets", "title": "4 стула + 2 табуретки", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 22000, "color": "", "size": "", "n": 4, "img": ["chairsets-6e56.jpg"]}, {"cat": "chairsets", "title": "2 стула + 2 табуретки венге", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 13000, "color": "венге", "size": "", "n": 2, "img": ["chairsets-6e57.jpg"]}, {"cat": "chairsets", "title": "2 стула тёмный орех", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 9000, "color": "орех", "size": "", "n": 2, "img": ["chairsets-6e58.jpg"]}, {"cat": "chairsets", "title": "2 стула белый", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 9000, "color": "белый", "size": "", "n": 2, "img": ["chairsets-6e59.jpg"]}, {"cat": "chairsets", "title": "2 стула + 1 табуретка венге", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 11000, "color": "венге", "size": "", "n": 2, "img": ["chairsets-6e60.jpg"]}, {"cat": "chairsets", "title": "10 стульев венге", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 45000, "color": "венге", "size": "", "n": 10, "img": ["chairsets-6e61.jpg"]}, {"cat": "chairsets", "title": "4 стула + 2 табуретки венге", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 22000, "color": "венге", "size": "", "n": 4, "img": ["chairsets-6e62.jpg"]}, {"cat": "chairsets", "title": "4 стула венге", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 18000, "color": "венге", "size": "", "n": 4, "img": ["chairsets-6e63.jpg"]}, {"cat": "chairsets", "title": "8 стульев венге", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 36000, "color": "венге", "size": "", "n": 8, "img": ["chairsets-6e64.jpg"]}, {"cat": "chairsets", "title": "Стулья №2 2 шт орех", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 9000, "color": "орех", "size": "", "n": 2, "img": ["chairsets-6e65.jpg"]}, {"cat": "chairsets", "title": "2 стула + 1 табуретка тёмный орех", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 11000, "color": "орех", "size": "", "n": 2, "img": ["chairsets-6e66.jpg"]}, {"cat": "chairsets", "title": "2 стула белый", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 9000, "color": "белый", "size": "", "n": 2, "img": ["chairsets-6e67.jpg"]}, {"cat": "chairsets", "title": "4 стула №2 крем", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 18000, "color": "бежевый", "size": "", "n": 4, "img": ["chairsets-6e68.jpg"]}, {"cat": "chairsets", "title": "6 стульев №2 крем", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 27000, "color": "бежевый", "size": "", "n": 6, "img": ["chairsets-6e69.jpg"]}, {"cat": "chairsets", "title": "2 стула №2 венге", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 9000, "color": "венге", "size": "", "n": 2, "img": ["chairsets-6e70.jpg"]}, {"cat": "chairsets", "title": "2 стула + 2 табуретки тёмный орех", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 13000, "color": "орех", "size": "", "n": 2, "img": ["chairsets-6e71.jpg"]}, {"cat": "chairsets", "title": "Стул №7 2 шт", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 8000, "color": "", "size": "", "n": 2, "img": ["chairsets-6e72.jpg"]}, {"cat": "chairsets", "title": "6 стульев + 2 табуретки белый", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 31000, "color": "белый", "size": "", "n": 6, "img": ["chairsets-6e73.jpg"]}, {"cat": "chairsets", "title": "4 стула + 1 табуретка белый", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 20000, "color": "белый", "size": "", "n": 4, "img": ["chairsets-6e74.jpg"]}, {"cat": "chairsets", "title": "2 стула венге", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 8000, "color": "венге", "size": "", "n": 2, "img": ["chairsets-6e75.jpg"]}, {"cat": "chairsets", "title": "4 стула + 2 табуретки венге", "desc": "Массив берёзы, жесткая спинка. Высота 97 см, сиденье 45 см", "price": 20000, "color": "венге", "size": "", "n": 4, "img": ["chairsets-6e76.jpg"]}, {"cat": "chairsets", "title": "4 стула + 2 табуретки белый", "desc": "Массив берёзы, мягкая спинка. Высота 97 см, сиденье 45 см", "price": 22000, "color": "белый", "size": "", "n": 4, "img": ["chairsets-6e77.jpg"]}, {"cat": "chairsets", "title": "6 стульев белый", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 27000, "color": "белый", "size": "", "n": 6, "img": ["chairsets-6e78.jpg"]}, {"cat": "chairsets", "title": "4 стула + 2 табуретки белый", "desc": "Массив берёзы, мягкая спинка. Высота 96–97 см, сиденье 45 см", "price": 22000, "color": "белый", "size": "", "n": 4, "img": ["chairsets-6e79.jpg"]}, {"cat": "stools", "title": "Табуретки", "desc": "Массив берёзы, мягкое сиденье. Цвет любой", "price": 2000, "color": "", "size": "", "n": 0, "img": ["../img2/stools-6e81.jpg"]}, {"cat": "stools", "title": "Табуретки", "desc": "Массив берёзы, жесткое сиденье под дерево. Цвет любой", "price": 3000, "color": "", "size": "", "n": 0, "img": ["../img2/stools-6e82.jpg"]}, {"cat": "stools", "title": "4 табуретки", "desc": "Массив берёзы, мягкое сиденье. Высота 45 см", "price": 8000, "color": "", "size": "", "n": 0, "img": ["../img2/stools-6e83.jpg", "../img2/stools-6e85.jpg"]}, {"cat": "stools", "title": "Табурет натуральный", "desc": "Массив берёзы, мягкое сиденье. Высота 45 см", "price": 2000, "color": "натуральный", "size": "", "n": 0, "img": ["../img2/stools-6e84.jpg"]}, {"cat": "stools", "title": "6 табуреток белый", "desc": "Массив берёзы, мягкое сиденье. Высота 45 см", "price": 12000, "color": "белый", "size": "", "n": 0, "img": ["../img2/stools-6e86.jpg"]}, {"cat": "stools", "title": "8 табуреток", "desc": "Массив берёзы, мягкое сиденье. Высота 45 см", "price": 16000, "color": "", "size": "", "n": 0, "img": ["../img2/stools-6e87.jpg", "../img2/stools-6e88.jpg"]}, {"cat": "tables", "title": "Стол «Презент» бежевый", "desc": "Стол 120×70, раздвижной до 160 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "бежевый", "size": "120×70", "n": 0, "img": ["../img2/tables-8202.jpg"]}, {"cat": "tables", "title": "Стол «Презент» бежевый", "desc": "Стол 130×80, раздвижной до 170 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "бежевый", "size": "130×80", "n": 0, "img": ["../img2/tables-8203.jpg"]}, {"cat": "tables", "title": "Стол «Презент»", "desc": "Стол 160×90, раздвижной до 210 см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "", "size": "160×90", "n": 0, "img": ["../img2/tables-8204.jpg"]}, {"cat": "tables", "title": "Стол «Презент» бежевый", "desc": "Стол 160×90 + 2 вставки по 50 см, раздвижной до 260см. Столешница МДФ, ножки — массив берёзы", "price": 29000, "color": "бежевый", "size": "160×90", "n": 0, "img": ["../img2/tables-8205.jpg"]}, {"cat": "tables", "title": "Стол «Презент»", "desc": "Стол 120×70, раздвижной до 160 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "", "size": "120×70", "n": 0, "img": ["../img2/tables-8206.jpg"]}, {"cat": "tables", "title": "Стол «Презент» белый", "desc": "Стол 130×80, раздвижной до 170 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "белый", "size": "130×80", "n": 0, "img": ["../img2/tables-8207.jpg"]}, {"cat": "tables", "title": "Стол «Презент» белый", "desc": "Стол 160×90, раздвижной до 210 см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "белый", "size": "160×90", "n": 0, "img": ["../img2/tables-8208.jpg"]}, {"cat": "tables", "title": "Стол «Презент» белый", "desc": "Стол 160×90 + 2 вставки по 50 см, раздвижной до 260см. Столешница МДФ, ножки — массив берёзы", "price": 29000, "color": "белый", "size": "160×90", "n": 0, "img": ["../img2/tables-8209.jpg"]}, {"cat": "tables", "title": "Стол «Презент» серый", "desc": "Стол 130×80, раздвижной до 170 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "серый", "size": "130×80", "n": 0, "img": ["../img2/tables-8210.jpg"]}, {"cat": "tables", "title": "Стол «Презент» серый", "desc": "Стол 160×90, раздвижной до 210 см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "серый", "size": "160×90", "n": 0, "img": ["../img2/tables-8211.jpg"]}, {"cat": "tables", "title": "Стол «Презент» каштан", "desc": "Стол 130×80, раздвижной до 170 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "каштан", "size": "130×80", "n": 0, "img": ["../img2/tables-8212.jpg"]}, {"cat": "tables", "title": "Стол «Презент» каштан", "desc": "Стол 160×90, раздвижной до 210 см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "каштан", "size": "160×90", "n": 0, "img": ["../img2/tables-8213.jpg"]}, {"cat": "tables", "title": "Стол «Презент» каштан", "desc": "Стол 160×90 + 2вставки по 50 см, раздвижной до 260 см. Столешница МДФ, ножки — массив берёзы", "price": 29000, "color": "каштан", "size": "160×90", "n": 0, "img": ["../img2/tables-8214.jpg"]}, {"cat": "tables", "title": "Стол «Презент» махагон", "desc": "Стол 120×70, раздвижной до 160 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "махагон", "size": "120×70", "n": 0, "img": ["../img2/tables-8215.jpg"]}, {"cat": "tables", "title": "Стол «Презент» махагон", "desc": "Стол 130×80, раздвижной до 170 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "махагон", "size": "130×80", "n": 0, "img": ["../img2/tables-8216.jpg"]}, {"cat": "tables", "title": "Стол «Презент» махагон", "desc": "Стол 160×90, раздвижной до 210 см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "махагон", "size": "160×90", "n": 0, "img": ["../img2/tables-8217.jpg"]}, {"cat": "tables", "title": "Стол «Презент» махагон", "desc": "Стол 160×90, 2 вставки по 50см, раздвижной до 260 см. Столешница МДФ, ножки — массив берёзы", "price": 29000, "color": "махагон", "size": "160×90", "n": 0, "img": ["../img2/tables-8218.jpg"]}, {"cat": "tables", "title": "Стол «Презент» тёмный орех", "desc": "Стол 120×70, раздвижной до 160 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "орех", "size": "120×70", "n": 0, "img": ["../img2/tables-8219.jpg"]}, {"cat": "tables", "title": "Стол «Презент» тёмный орех", "desc": "Стол 130×80, раздвижной до 170 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "орех", "size": "130×80", "n": 0, "img": ["../img2/tables-8220.jpg"]}, {"cat": "tables", "title": "Стол «Презент» тёмный орех", "desc": "Стол 160×90 + 50 см, раздвижной до 210см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "орех", "size": "160×90", "n": 0, "img": ["../img2/tables-8221.jpg"]}, {"cat": "tables", "title": "Стол «Презент» тёмный орех", "desc": "Стол 160×90 + 2 вставки по 50 см, раздвижной до 260см. Столешница МДФ, ножки — массив берёзы", "price": 29000, "color": "орех", "size": "160×90", "n": 0, "img": ["../img2/tables-8222.jpg"]}, {"cat": "tables", "title": "Стол «Презент» венге", "desc": "Стол 120×70, раздвижной до 160 см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "венге", "size": "120×70", "n": 0, "img": ["../img2/tables-8223.jpg"]}, {"cat": "tables", "title": "Стол «Презент» венге", "desc": "Стол 130×80, раздвижной до 170см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "венге", "size": "130×80", "n": 0, "img": ["../img2/tables-8224.jpg"]}, {"cat": "tables", "title": "Стол «Презент» венге", "desc": "Стол 160×90, раздвижной до 210 см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "венге", "size": "160×90", "n": 0, "img": ["../img2/tables-8225.jpg"]}, {"cat": "tables", "title": "Стол «Презент» венге", "desc": "Стол 160×90 + 2 вставки по 50 см, раздвижной до 260см. Столешница МДФ, ножки — массив берёзы", "price": 29000, "color": "венге", "size": "160×90", "n": 0, "img": ["../img2/tables-8226.jpg"]}, {"cat": "tables", "title": "Стол «Презент» шоколад", "desc": "Стол 130×80, раздвижной до 170см. Столешница МДФ, ножки — массив берёзы", "price": 20000, "color": "шоколад", "size": "130×80", "n": 0, "img": ["../img2/tables-8227.jpg"]}, {"cat": "tables", "title": "Стол «Презент» шоколад", "desc": "Стол 160×90, раздвижной до 210см. Столешница МДФ, ножки — массив берёзы", "price": 25000, "color": "шоколад", "size": "160×90", "n": 0, "img": ["../img2/tables-8228.jpg"]}, {"cat": "tables", "title": "Стол «Презент» шоколад", "desc": "Стол 160×90, 2 вставки по 50 см, раздвижной до 260см. Столешница МДФ, ножки — массив берёзы", "price": 29000, "color": "шоколад", "size": "160×90", "n": 0, "img": ["../img2/tables-8229.jpg"]}, {"cat": "tables", "title": "Стол «Презент» Макси, усиленные ножки — бежевый", "desc": "Стол 200 на 100 см +50 вставка в раскладном виде 250 на 100см. Столешница МДФ, ножки — массив берёзы", "price": 40000, "color": "бежевый", "size": "200×100", "n": 0, "img": ["../img2/tables-8230.jpg"]}, {"cat": "tables", "title": "Стол «Презент» Макси, усиленные ножки — белый", "desc": "Стол 200 на 100 см +50 вставка в раскладном виде 250 на 100см. Столешница МДФ, ножки — массив берёзы", "price": 40000, "color": "белый", "size": "200×100", "n": 0, "img": ["../img2/tables-8231.jpg"]}, {"cat": "tables", "title": "Стол «Презент» Макси, усиленные ножки — орех", "desc": "Стол 200 на 100 см +50 вставка в раскладном виде 250 на 100см. Столешница МДФ, ножки — массив берёзы", "price": 40000, "color": "орех", "size": "200×100", "n": 0, "img": ["../img2/tables-8232.jpg"]}, {"cat": "tables", "title": "Стол «Презент» Макси, усиленные ножки — махагон", "desc": "Стол 200 на 100 см +50 вставка в раскладном виде 250 на 100см. Столешница МДФ, ножки — массив берёзы", "price": 40000, "color": "махагон", "size": "200×100", "n": 0, "img": ["../img2/tables-8233.jpg"]}, {"cat": "tables", "title": "Стол «Презент» Макси, усиленные ножки — венге", "desc": "Стол 200 на 100 см +50 вставка в раскладном виде 250 на 100см. Столешница МДФ, ножки — массив берёзы", "price": 40000, "color": "венге", "size": "200×100", "n": 0, "img": ["../img2/tables-8234.jpg"]}, {"cat": "tables", "title": "Стол «Презент» Макси, усиленные ножки — шоколад", "desc": "Стол 200 на 100 см +50 вставка в раскладном виде 250 на 100см. Столешница МДФ, ножки — массив берёзы", "price": 40000, "color": "шоколад", "size": "200×100", "n": 0, "img": ["../img2/tables-8235.jpg"]}, {"cat": "tables", "title": "Стол «Презент» Макси, усиленные ножки — каштан (какао)", "desc": "Стол 200 на 100 см +50 вставка в раскладном виде 250 на 100см. Столешница МДФ, ножки — массив берёзы", "price": 40000, "color": "каштан", "size": "200×100", "n": 0, "img": ["../img2/tables-8236.jpg"]}, {"cat": "tables", "title": "Стол «Уют»", "desc": "Стол 110×70, раздвижной до 145 см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "", "size": "110×70", "n": 0, "img": ["../img2/tables-8237.jpg"]}, {"cat": "tables", "title": "Стол «Уют» тёмный орех", "desc": "Стол 110×70, раздвижной до 145 см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "орех", "size": "110×70", "n": 0, "img": ["../img2/tables-8238.jpg"]}, {"cat": "tables", "title": "Стол «Уют» белый", "desc": "Стол 110×70, раздвижной до 145 см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "белый", "size": "110×70", "n": 0, "img": ["../img2/tables-8239.jpg"]}, {"cat": "tables", "title": "Стол «Уют» венге", "desc": "Стол 110×70, раздвижной до 145 см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "венге", "size": "110×70", "n": 0, "img": ["../img2/tables-8240.jpg"]}, {"cat": "tables", "title": "Стол «Уют» махагон", "desc": "Стол 110×70, раздвижной до 145 см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "махагон", "size": "110×70", "n": 0, "img": ["../img2/tables-8241.jpg"]}, {"cat": "tables", "title": "Стол «Уют» серый", "desc": "Стол 110×70, раздвижной до 145 см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "серый", "size": "110×70", "n": 0, "img": ["../img2/tables-8242.jpg"]}, {"cat": "tables", "title": "Стол круглый белый", "desc": "Круглый стол D90 см, раздвижной 125см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "белый", "size": "круглый D90", "n": 0, "img": ["../img2/tables-8243.jpg"]}, {"cat": "tables", "title": "Стол круглый бежевый", "desc": "Круглый стол D90 см, раздвижной 125см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "бежевый", "size": "круглый D90", "n": 0, "img": ["../img2/tables-8244.jpg"]}, {"cat": "tables", "title": "Стол круглый махагон", "desc": "Круглый стол D90 см, раздвижной 125см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "махагон", "size": "круглый D90", "n": 0, "img": ["../img2/tables-8245.jpg"]}, {"cat": "tables", "title": "Стол круглый венге", "desc": "Круглый стол D90 см, раздвижной 125см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "венге", "size": "круглый D90", "n": 0, "img": ["../img2/tables-8246.jpg"]}, {"cat": "tables", "title": "Стол круглый орех", "desc": "Круглый стол D90 см, раздвижной 125см. Столешница МДФ, ножки — массив берёзы", "price": 18000, "color": "орех", "size": "круглый D90", "n": 0, "img": ["../img2/tables-8247.jpg"]}, {"cat": "sets", "title": "Набор «Презент» махагон — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула из массива берёзы с мягкой спинкой", "price": 38000, "color": "махагон", "size": "130×80", "n": 4, "img": ["sets-9503.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 8 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 8 стульев из массива берёзы с мягкой спинкой", "price": 61000, "color": "белый", "size": "160×90", "n": 8, "img": ["sets-9504.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула Хит", "price": 38000, "color": "белый", "size": "130×80", "n": 4, "img": ["sets-9505.jpg"]}, {"cat": "sets", "title": "Набор «Презент» бежевый — стол + 6 стульев + 2 табуретки", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев с мягкой спинкой и. 2 табуретки", "price": 56000, "color": "бежевый", "size": "160×90", "n": 6, "img": ["sets-9506.jpg"]}, {"cat": "sets", "title": "Набор «Презент» махагон — стол + 6 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев с мягкой спинкой", "price": 52000, "color": "махагон", "size": "160×90", "n": 6, "img": ["sets-9507.jpg"]}, {"cat": "sets", "title": "Набор «Презент» махагон — стол + 8 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 8 стульев с мягкой спинкой", "price": 61000, "color": "махагон", "size": "160×90", "n": 8, "img": ["sets-9508.jpg"]}, {"cat": "sets", "title": "Набор «Презент» махагон — стол + 6 стульев + 2 табуретки", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев с мягкой спинкой и. 2 табуретки", "price": 56000, "color": "махагон", "size": "160×90", "n": 6, "img": ["sets-9509.jpg"]}, {"cat": "sets", "title": "Набор «Презент» махагон — стол + 2 стула + 2 табуретки", "desc": "Стол 130×80, раздвижной до 170 см. 2 стула с мягкой спинкой и. 2 табуретки", "price": 33000, "color": "махагон", "size": "130×80", "n": 2, "img": ["sets-9510.jpg"]}, {"cat": "sets", "title": "Набор «Презент» махагон — стол + 6 стульев", "desc": "Стол 130×80, раздвижной до 170 см. 6 стульев с мягкой спинкой", "price": 47000, "color": "махагон", "size": "130×80", "n": 6, "img": ["sets-9511.jpg"]}, {"cat": "sets", "title": "Набор «Презент» крем — стол + 8 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 8 стульев с мягкой спинкой", "price": 61000, "color": "бежевый", "size": "160×90", "n": 8, "img": ["sets-9512.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 6 стульев + 2 табуретки", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев с мягкой спинкой и. 2 табуретки", "price": 56000, "color": "белый", "size": "160×90", "n": 6, "img": ["sets-9513.jpg"]}, {"cat": "sets", "title": "Набор «Презент» венге — стол + 2 стула", "desc": "Стол 130×80, раздвижной до 170 см. 2 стула с мягкой спинкой", "price": 29000, "color": "венге", "size": "130×80", "n": 2, "img": ["../img2/sets-9514.jpg"]}, {"cat": "sets", "title": "Набор «Презент» венге — стол + 2 стула + 2 табуретки", "desc": "Стол 130×80, раздвижной до 170 см. 2 стула с мягкой спинкой и. 2 табуретки", "price": 33000, "color": "венге", "size": "130×80", "n": 2, "img": ["../img2/sets-9515.jpg"]}, {"cat": "sets", "title": "Набор «Презент» венге — стол + 6 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев №7 с жесткой спинкой", "price": 49000, "color": "венге", "size": "160×90", "n": 6, "img": ["../img2/sets-9516.jpg"]}, {"cat": "sets", "title": "Набор «Презент» венге — стол + 6 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев №2 с мягкой спинкой", "price": 52000, "color": "венге", "size": "160×90", "n": 6, "img": ["../img2/sets-9517.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 2 стула", "desc": "Стол 130×80, раздвижной до 170 см. 2 стула с мягкой спинкой", "price": 29000, "color": "белый", "size": "130×80", "n": 2, "img": ["../img2/sets-9518.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 6 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев с мягкой спинкой", "price": 52000, "color": "белый", "size": "160×90", "n": 6, "img": ["../img2/sets-9519.jpg", "../img2/sets-9547.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 6 стульев + 2 табуретки", "desc": "Стол 160×90 +2 вставки по 50см, раздвижной до 260 см. 6 стульев с мягкой спинкой и. 2 табуретки", "price": 60000, "color": "белый", "size": "160×90", "n": 6, "img": ["../img2/sets-9520.jpg"]}, {"cat": "sets", "title": "Набор «Презент» серый — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула Лайт", "price": 43000, "color": "серый", "size": "130×80", "n": 4, "img": ["../img2/sets-9521.jpg"]}, {"cat": "sets", "title": "Набор «Презент» махагон — стол + 2 стула", "desc": "Стол 130×80, раздвижной до 170 см. 2 стула с мягкой спинкой", "price": 29000, "color": "махагон", "size": "130×80", "n": 2, "img": ["../img2/sets-9522.jpg"]}, {"cat": "sets", "title": "Набор — стол + 2 стула + 2 табуретки", "desc": "Стол 110×70, раздвижной до 145 см. 2 стула с мягкой спинкой и. 2 табуретки", "price": 31000, "color": "", "size": "110×70", "n": 2, "img": ["../img2/sets-9523.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 2 табуретки", "desc": "Стол 130×80, раздвижной до 170 см. 2 табуретки", "price": 24000, "color": "белый", "size": "130×80", "n": 0, "img": ["../img2/sets-9524.jpg"]}, {"cat": "sets", "title": "Набор «Презент» венге — стол + 4 табуретки", "desc": "Стол 130×80, раздвижной до 170 см. 4 табуретки", "price": 28000, "color": "венге", "size": "130×80", "n": 0, "img": ["../img2/sets-9525.jpg"]}, {"cat": "sets", "title": "Набор «Презент» — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула Лайт", "price": 38000, "color": "", "size": "130×80", "n": 4, "img": ["../img2/sets-9526.jpg"]}, {"cat": "sets", "title": "Набор «Презент» коричневый — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула Алекс", "price": 42000, "color": "орех", "size": "130×80", "n": 4, "img": ["../img2/sets-9527.jpg"]}, {"cat": "sets", "title": "Набор «Презент» серый — стол + 6 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 6 стульев “Лайт”", "price": 52000, "color": "серый", "size": "160×90", "n": 6, "img": ["../img2/sets-9528.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 10 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 10 стульев с мягкой спинкой", "price": 70000, "color": "белый", "size": "160×90", "n": 10, "img": ["../img2/sets-9529.jpg"]}, {"cat": "sets", "title": "Набор «Презент» венге — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула с мягкой спинкой", "price": 38000, "color": "венге", "size": "130×80", "n": 4, "img": ["../img2/sets-9530.jpg", "../img2/sets-9532.jpg", "../img2/sets-9535.jpg"]}, {"cat": "sets", "title": "Набор — стол + 4 стула", "desc": "Стол 110×70, раздвижной до 145 см. 4 стула №7", "price": 34000, "color": "", "size": "110×70", "n": 4, "img": ["../img2/sets-9531.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула с мягкой спинкой", "price": 38000, "color": "белый", "size": "130×80", "n": 4, "img": ["../img2/sets-9533.jpg", "../img2/sets-9538.jpg"]}, {"cat": "sets", "title": "Набор — стол + 2 стула", "desc": "Стол 110×70, раздвижной до 145 см. 2 стула с мягкой спинкой", "price": 26000, "color": "", "size": "110×70", "n": 2, "img": ["../img2/sets-9534.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 4 табуретки", "desc": "Стол 130×80, раздвижной до 170 см. 4 табуретки", "price": 28000, "color": "белый", "size": "130×80", "n": 0, "img": ["../img2/sets-9536.jpg", "../img2/sets-9541.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 2 стула + 2 табуретки", "desc": "Стол 130×80, раздвижной до 170 см. 2 стула с мягкой спинкой и. 2 табуретки", "price": 33000, "color": "белый", "size": "130×80", "n": 2, "img": ["../img2/sets-9537.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула №7", "price": 36000, "color": "белый", "size": "130×80", "n": 4, "img": ["../img2/sets-9539.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула Алекс", "price": 44000, "color": "белый", "size": "130×80", "n": 4, "img": ["../img2/sets-9540.jpg"]}, {"cat": "sets", "title": "Набор «Презент» венге — стол + 8 стульев", "desc": "Стол 160×90, раздвижной до 210 см. 8 стульев с мягкой спинкой", "price": 61000, "color": "венге", "size": "160×90", "n": 8, "img": ["../img2/sets-9542.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 4 стула + 2 табуретки", "desc": "Стол 160×90, раздвижной до 210 см. 4 стула с мягкой спинкой и. 2 табуретки", "price": 47000, "color": "белый", "size": "160×90", "n": 4, "img": ["../img2/sets-9543.jpg"]}, {"cat": "sets", "title": "Набор «Презент» — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула Визит", "price": 50000, "color": "", "size": "130×80", "n": 4, "img": ["../img2/sets-9544.jpg"]}, {"cat": "sets", "title": "Набор «Презент» орех — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула с мягкой спинкой", "price": 38000, "color": "орех", "size": "130×80", "n": 4, "img": ["../img2/sets-9545.jpg"]}, {"cat": "sets", "title": "Набор «Презент» белый — стол + 4 стула", "desc": "Стол 130×80, раздвижной до 170 см. 4 стула с мягкой спинкой", "price": 50000, "color": "белый", "size": "130×80", "n": 4, "img": ["../img2/sets-9546.jpg"]}];
+
+const CATS = [
+  {id:"all",       name:"Все товары"},
+  {id:"sets",      name:"Наборы стол + стулья"},
+  {id:"tables",    name:"Столы"},
+  {id:"chairs",    name:"Стулья"},
+  {id:"chairsets", name:"Комплекты стульев"},
+  {id:"stools",    name:"Табуретки"}
+];
+const COLORS = {"белый":"#fbfaf6","бежевый":"#e9d9bd","серый":"#9b9a97","натуральный":"#e3c79a","орех":"#7b5233","каштан":"#6a4430","махагон":"#7a2e1f","шоколад":"#4a3127","венге":"#3a2a22"};
+const $ = s => document.querySelector(s);
+const fmt = n => n.toLocaleString("ru-RU").replace(/,/g," ") + " ₽";
+ITEMS.forEach((it,i)=>it.i=i);
+
+let st = {cat:"sets", color:"", size:"", n:"", sort:"def"};
+const h = location.hash.slice(1); if (CATS.some(c=>c.id===h)) st.cat = h;
+$("#upd").textContent = UPDATED;
+
+function msg(it){ return it ? `Здравствуйте! Интересует из каталога: ${it.title} — ${fmt(it.price)}. Есть в наличии?` : "Здравствуйте! Хочу узнать про столы и стулья из каталога."; }
+function link(kind, text){
+  const base = CONTACTS[kind];
+  if (kind==="telegram" && text) return base + (base.includes("?")?"&":"?") + "text=" + encodeURIComponent(text);
+  return base;
+}
+function copy(text){
+  try { navigator.clipboard.writeText(text); } catch(e){}
+  toast("Текст скопирован — вставьте его в чат");
+}
+let tt; function toast(t){ const el=$("#toast"); el.textContent=t; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("on"),2600); }
+
+document.querySelectorAll(".js-tg").forEach(a=>{ const m=a.dataset.msg||msg(); a.href=link("telegram",m); a.addEventListener("click",()=>copy(m)); });
+document.querySelectorAll(".js-max").forEach(a=>{ const m=a.dataset.msg||msg(); a.href=link("max"); a.addEventListener("click",()=>copy(m)); });
+
+function inCat(it){ return st.cat==="all" || it.cat===st.cat; }
+function filtered(){
+  let r = ITEMS.filter(it => inCat(it)
+    && (!st.color || it.color===st.color)
+    && (!st.size  || it.size===st.size)
+    && (!st.n     || String(it.n)===st.n));
+  if (st.sort==="asc") r=[...r].sort((a,b)=>a.price-b.price);
+  if (st.sort==="desc") r=[...r].sort((a,b)=>b.price-a.price);
+  return r;
+}
+function renderTabs(){
+  $("#tabs").innerHTML = CATS.map(c=>{
+    const n = c.id==="all"?ITEMS.length:ITEMS.filter(i=>i.cat===c.id).length;
+    return `<button class="tab ${st.cat===c.id?"on":""}" data-c="${c.id}">${c.name}<span class="n">${n}</span></button>`;
+  }).join("");
+  const on=document.querySelector(".tab.on"); if(on){const t=$("#tabs"); t.scrollLeft=on.offsetLeft-t.clientWidth/2+on.clientWidth/2;}
+}
+function renderChips(){
+  const pool = ITEMS.filter(inCat);
+  let html = "";
+  if (st.cat==="sets"){
+    const ns=[...new Set(pool.map(i=>i.n).filter(Boolean))].sort((a,b)=>a-b);
+    html += ns.map(n=>`<button class="chip nodot ${st.n==String(n)?"on":""}" data-n="${n}">${n} ${n<5?"стула":"стульев"}</button>`).join("");
+  }
+  if (st.cat==="tables"||st.cat==="sets"){
+    const ss=[...new Set(pool.map(i=>i.size).filter(Boolean))];
+    html += ss.map(s=>`<button class="chip nodot ${st.size===s?"on":""}" data-s="${s}">${s}</button>`).join("");
+  }
+  const cs=Object.keys(COLORS).filter(c=>pool.some(i=>i.color===c));
+  html += cs.map(c=>`<button class="chip ${st.color===c?"on":""}" data-col="${c}"><i style="background:${COLORS[c]}"></i>${c}</button>`).join("");
+  $("#chips").innerHTML = html;
+}
+function word(n){const a=n%10,b=n%100;return (a===1&&b!==11)?"товар":(a>=2&&a<=4&&(b<10||b>=20))?"товара":"товаров";}
+function renderGrid(){
+  const r = filtered();
+  $("#secTitle").textContent = CATS.find(c=>c.id===st.cat).name;
+  $("#secCount").textContent = r.length+" "+word(r.length);
+  $("#empty").hidden = r.length>0;
+  $("#grid").innerHTML = r.map(it=>`
+    <article class="card" data-i="${it.i}">
+      <div class="ph"><img src="img/${it.img[0]}" alt="${it.title.replace(/"/g,"&quot;")}" loading="lazy" decoding="async">
+        ${it.size?`<span class="badge">${it.size}</span>`:""}${it.img.length>1?`<span class="badge r">${it.img.length} фото</span>`:""}</div>
+      <div class="bd">
+        <h3>${it.title}</h3>
+        <p>${it.desc}</p>
+        <div class="ft"><div class="price">${it.cat==="sets"||/^\d/.test(it.title)?"<small>за набор</small>":""}${fmt(it.price)}</div>
+        <span class="btn btn-ghost btn-sm">Подробнее</span></div>
+      </div>
+    </article>`).join("");
+}
+function render(){ renderTabs(); renderChips(); renderGrid(); }
+
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest(".tab"); if(!b)return; st={...st,cat:b.dataset.c,color:"",size:"",n:""}; history.replaceState(null,"","#"+st.cat); render();});
+$("#chips").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return;
+  if(b.dataset.col!==undefined) st.color = st.color===b.dataset.col?"":b.dataset.col;
+  if(b.dataset.s!==undefined) st.size = st.size===b.dataset.s?"":b.dataset.s;
+  if(b.dataset.n!==undefined) st.n = st.n===b.dataset.n?"":b.dataset.n;
+  renderChips(); renderGrid();});
+$("#sort").addEventListener("change",e=>{st.sort=e.target.value; renderGrid();});
+
+/* modal */
+let cur=null, ph=0;
+function openItem(i){
+  cur=ITEMS[i]; ph=0;
+  $("#mTitle").textContent=cur.title;
+  $("#mPrice").innerHTML=fmt(cur.price);
+  $("#mSpecs").innerHTML=cur.desc.split(/\.\s+/).filter(Boolean).map(s=>`<li>${s.replace(/\.$/,"")}</li>`).join("");
+  const m=msg(cur);
+  $("#mTg").href=link("telegram",m); $("#mMax").href=link("max");
+  $("#mTg").onclick=$("#mMax").onclick=()=>copy(m);
+  $("#thumbs").innerHTML = cur.img.length>1 ? cur.img.map((s,k)=>`<img src="img/${s}" data-k="${k}" alt="">`).join("") : "";
+  $("#prev").style.display=$("#next").style.display=cur.img.length>1?"":"none";
+  showPh();
+  $("#modal").classList.add("open"); document.body.style.overflow="hidden";
+}
+function showPh(){ $("#mImg").src="img/"+cur.img[ph]; $("#mImg").alt=cur.title; document.querySelectorAll("#thumbs img").forEach((t,k)=>t.classList.toggle("on",k===ph)); }
+function closeM(){ $("#modal").classList.remove("open"); document.body.style.overflow=""; }
+$("#grid").addEventListener("click",e=>{const c=e.target.closest(".card"); if(c) openItem(+c.dataset.i);});
+$("#close").onclick=closeM;
+$("#modal").addEventListener("click",e=>{ if(e.target.id==="modal") closeM(); });
+$("#prev").onclick=()=>{ph=(ph-1+cur.img.length)%cur.img.length; showPh();};
+$("#next").onclick=()=>{ph=(ph+1)%cur.img.length; showPh();};
+$("#thumbs").addEventListener("click",e=>{const t=e.target.closest("img"); if(t){ph=+t.dataset.k; showPh();}});
+document.addEventListener("keydown",e=>{ if(!$("#modal").classList.contains("open"))return; if(e.key==="Escape")closeM(); if(e.key==="ArrowLeft")$("#prev").click(); if(e.key==="ArrowRight")$("#next").click(); });
+
+render();
+</script>
+</body>
+</html>
